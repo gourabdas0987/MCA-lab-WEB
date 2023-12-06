@@ -1,0 +1,47 @@
+body{
+    background-image: url("D:/Web Development/HTML Pictures/img_car.jpg");
+    background-size: cover ;
+}
+
+h1   {
+    color: blue;
+}
+p    {
+    color: red;
+    border: 2px solid powderblue;
+}
+
+
+img{
+    height: 400px;
+    width: 379px;
+}
+pre{
+    background-image: url("D:/Web Development/HTML Pictures/bcbulb.jpg"); 
+    background-size: cover ;
+    background-attachment: fixed;
+    font-family:calibri;
+    color:chartreuse;
+    margin: 40px;
+    font-size: 20px ;
+ }
+
+table{
+    border: 5px solid pink;
+    color: black;
+}
+
+td,th{
+    background-color: #8b2424;
+    text-align: left;
+    width: auto;
+}
+
+#head2{
+    color: cyan;
+    background-color:black;
+}
+
+picture{
+    width: auto;
+}

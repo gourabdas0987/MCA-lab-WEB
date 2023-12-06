@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTMLM09</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                display: flex;
+                justify-content: center; 
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                font-weight: bold ;
+            }
+            .form-container {
+                text-align: center;
+                padding: 20px;
+                border: 1px solid #cccccc;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+        </style>
+    </head>
+<body>
+    <form action="submit_form.php" method="post">
+        <label for="fname" style="margin-left: 13px;"><b>First Name</b></label>
+        <input type="text" id="fname" name="fname" required><br><br>
+
+        <label for="lname" style="margin-left: 15px;"><b>Last Name</b></label>
+        <input type="text" id="lname" name="lname" required><br><br>
+
+        <label for="username" style="margin-left: 18px;"><b>user name</b></label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="email" style="margin-left: 47px;"><b>Email</b></label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="password" style="margin-left: 22px;"><b>Password</b></label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="re-password" style="margin-right: -1px;"><b>Re-password</b></label>
+        <input type="password" id="re-password" name="re-password" required><br><br>
+ 
+        <label for="dob" style="margin-left: 44px;"><b>D.O.B</b></label>
+        <input type="date" id="dob" name="dob" required><br><br>
+
+        <label for="mobile" style="margin-left: 38px;"><b>Mobile</b></label>
+        <input type="tel" id="mobile" name="mobile" required><br><br>
+
+        <label for="country" style="margin-left: 30px;"><b>Country</b></label>
+        <select id="country" name="country" value="choose yours">
+            <option value="">[choose yours]</option>
+            <option value="india">India</option>
+            <option value="usa">United States</option>
+            <option value="canada">Canada</option>
+            <option value="china">China</option>
+            <option value="japan">Japan</option>
+            <option value="uk">United Kingdom</option>
+            <option value="australia">Australia</option>
+        </select><br><br>
+
+        <label for="zip" style="margin-left: 20px;"><b>ZIP Code</b></label>
+        <input type="text" id="zip" name="zip" required><br><br>
+
+        <span>
+            <div style="padding-top: 10px; float:left"><b>Gender</b></div>
+            <div style="float:left">
+                <input type="radio" id="male" name="gender" style="margin-left: 45px;">
+                <label for="male"><b>Male</b></label><br>
+                <input type="radio" id="female" name="gender" style="margin-left: 45px;">
+                <label for="female"><b>Female</b></label><br>
+                <input type="checkbox" id="agree" name="agree" required style="margin-left: 45px;">
+                <label for="agree"><b>I agree with Terms & Conditions</b></label><br>
+            </div>
+        </span><br><br><br>
+
+        <input type="submit" value="Submit"  style="margin-left: 70px;">
+    </form>
+</body>
+</html>

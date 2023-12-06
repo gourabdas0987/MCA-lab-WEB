@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reservation Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    #container {
+      max-width: 400px;
+      padding: 20px;
+      border-radius: 8px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #reservationForm label,
+    #reservationForm input,
+    #reservationForm textarea,
+    #reservationForm button {
+      display: block;
+      margin-bottom: 10px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    #reservationForm button {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    #reservationForm button:hover {
+      background-color: #0056b3;
+    }
+
+    #displayInfo {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="container">
+  <h2>Reservation Form</h2>
+
+  <form id="reservationForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="mobile">Mobile Number (91-9887601234):</label>
+    <input type="text" id="mobile" name="mobile" required>
+
+    <label for="address">Address:</label>
+    <textarea id="address" name="address" required></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="displayInfo"></div>
+</div>
+
+<script>
+  document.getElementById('reservationForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const mobile = document.getElementById('mobile').value.trim();
+    const address = document.getElementById('address').value.trim();
+
+    const mobileRegex = /^91-\d{10}$/;
+    const emailRegex = /^\S+@\S+\.\S+$/;
+
+    const isValid = validateForm(name, email, mobile, address, mobileRegex, emailRegex);
+
+    if (isValid) {
+      displayReservationInfo(name, email, mobile, address);
+    }
+  });
+
+  function validateForm(name, email, mobile, address, mobileRegex, emailRegex) {
+    if (!name || !email || !mobile || !address) {
+      alert("All fields are mandatory.");
+      return false;
+    }
+
+    if (!mobileRegex.test(mobile)) {
+      alert("Mobile number should be in the format 91-9887601234");
+      return false;
+    }
+
+    if (!emailRegex.test(email)) {
+      alert("Please enter a valid email address.");
+      return false;
+    }
+
+    return true;
+  }
+
+  function displayReservationInfo(name, email, mobile, address) {
+    const displayInfo = document.getElementById('displayInfo');
+    displayInfo.innerHTML = `
+      <h2>Reservation Information:</h2>
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Mobile:</strong> ${mobile}</p>
+      <p><strong>Address:</strong> ${address}</p>
+    `;
+  }
+</script>
+
+</body>
+</html>

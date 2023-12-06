@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML10</title>
+    <style>
+        fieldset{
+            font-weight: bold;
+            border-radius: 15px;
+        }
+        body{
+            margin: 50px;
+            width:fit-content;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>Contact Us</legend>
+            <p style="font-weight: normal;"><small>*required fields</small></p>
+            <label for="fullname">Your Full Name*:</label>
+            <br>
+            <input type="text" id="fullname" name="fullname" required autofocus >
+            <br><br>
+            <label for="email">Email Address *:</label><br>
+            <input type="text" id="email" name="email" required>
+            <br><br>
+            <label for="message">Message*:</label><br>
+            <textarea id="message" rows="10" cols="75" required> </textarea>
+            <br><br>
+            <p>Anti-spam question <br><br> <small style="font-weight: normal;">(Please answer the simple question below. This to prevent spam bots <br> from submitting this form)</small><br><br>What is the colour of the grass?  <input type="text" size="10">
+            </p>
+            <input type="submit"  >
+        </fieldset>
+    </form>
+</body>
+</html>

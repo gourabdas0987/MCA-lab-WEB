@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            width: fit-content;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+        #tr1{
+            background-color:white;
+        }
+        tr:nth-child(odd){
+            background-color:#dddddd;
+        }
+        table,th,td{
+            border-collapse:collapse;
+            border:2px solid black;
+        }
+        img{
+            float:inline-end;
+            width: 30%;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <img src="/HTML Pictures/Dog.jpeg" alt="Dog Image">
+    <p style="font-weight:bold; background-color:#BAD2EA; width:100%; color:#5872A8;">About</p>
+    <p>Woof woof! <br><br>
+    Hi, I am dog. I love <span style="color: hsl(239, 88%, 50%);">User Interface Design.</span></p>
+    <p style="font-weight:bold; background-color:#BAD2EA; width:100%; color:#5872A8;">Courses</p>
+    <p>Here are some courses I've taken.</p><br>
+    <table>
+        <tr id="tr1">
+            <th>Course Number</th>
+            <th>Course Title</th>
+            <th>Semester Taken</th>
+        </tr>
+        <th colspan="3">For Credit</th>
+        <tr>
+            <td>6.813</td>
+            <td>User Interface Design</td>
+            <td>Spring 2014</td>
+        </tr>
+        <tr>
+            <td>6.034</td>
+            <td>Artificial Intelligence</td>
+            <td>Fall 2013</td>
+        </tr>
+        <tr>
+            <td>6.006</td>
+            <td>Introduction to Algorithms</td>
+            <td>Fall 2013</td>
+        </tr>
+        <th colspan="3">Listener</th>
+        <tr>
+            <td>6.867</td>
+            <td>Machinbe Learning</td>
+            <td>Fall 2013</td>
+        </tr>
+        <tr>
+            <td>6.830</td>
+            <td>Database Systems</td>
+            <td>Fall 2012</td>
+        </tr>
+    </table>
+    <p style="font-weight:bold; background-color:#BAD2EA; width:100%; color:#5872A8;">Interests</p>
+    <p>I am invested <span  style="color:black; font-weight:bold;">HCI</span>,memes, and youtube vedios.</p>
+    <p style="font-weight:bold; background-color:#BAD2EA; width:100%; color:#5872A8;">Submit Pet Information</p>
+    <p>Would love to know what kind of pets you 'own' (you'll never own me). Submit below!</p>
+    <form action="">
+        <label for="name" name="name">Name:</label>
+        <input type="text" id="name" name="name"><br>
+        <label for="phylum" name="phylum">Phylum:</label>
+        <input type="text" id="phylum" name="pylum"><br>
+        <label for="gender" name="gender">Gender: </label>
+        <input type="text" id="gender" name="gender" style="margin-left: 2px;"><br>
+        <input type="submit">
+    </form>
+    <p style="font-size:x-large;">Required Resources </p>
+    <p>You will need a text editor,preferably with <br>syntax highlighting We recommend using <br><span style="color: #0daae3;">Sublime Text</span>, available on OS x. Windows and <br>Linux.</p>
+    <p style="font-size:x-large;">References</p>
+    <ul >
+        <li><span style="color: #0daae3;">Helpful vedios selected by TAs</span></li>
+        <li><span style="color: #0daae3;"> HTML reference</span></li>
+        <li><span style="color: #0daae3;">CSS reference</span></li>
+        <li><span style="color: #0daae3;">A condeced CSS primer by 6.831 staff</span></li>
+    </ul>    
+
+</body>
+</html>

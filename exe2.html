@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task13</title>
+    <style>
+    :root {
+    --main-color: rgb(252, 225, 221); /* Define a variable for the main color */
+    --mcolor: #e73c3c; /* Define a variable for an accent color */
+    }
+    body{
+        position: relative;
+        background-color: var(--main-color);
+    }
+    .outer{
+        width: 80%;
+        left: 10%;
+        background-color: white;
+        position: absolute;
+    }
+    .main{
+        padding: 20px;
+    }
+    .start 
+    {
+        margin-left: 40%;
+        width:250px;
+        background-color: var(--mcolor);
+        
+        padding: 0px 10px;  
+        color: white;
+    }
+    .start h1{
+        font-family: sans-serif;
+        margin: 0;
+    }
+    .start p{
+        font-family: cursive; 
+        text-align: right; 
+        margin: 0;
+    }
+
+    h3{
+        color: var(--mcolor);
+    }
+    .mstyle{
+        text-decoration: underline;
+        font-size: 20px;
+        font-weight: bolder;
+
+    }
+    .side 
+    {
+        position: absolute;
+        width: 170px;
+        right: 3%;
+        padding: 10px;
+        background-color: var(--main-color);
+        border: solid brown;
+    }
+
+    .side h2{
+        color: red;
+    }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="main">
+                    <div class="start">
+                        <h1 >Girl Develop It</h1>
+                        <p >Don't be shy, develop it.</p>
+                    </div>
+
+                    <h3>About</h3> 
+                        <p>It can be intimidating for women to learn and ask questions when they are in an <span class="mstyle">extreme minority</span>. 
+                            While open and welcoming, today's budding developer community is up to <span class="mstyle">91% male</span>. 
+                            If we can empower more females with the confidence in their technological capabilities 
+                            <span style="font-size: 20px;text-decoration:underline;"><i><b>we can begin to change this landscape</b></i></span>.</p>
+                    
+                    <div class="side">
+                        <h2 style="color: var(--mcolor);">Projects</h2>
+                        <nav>
+                            <ul>
+                                <li>USA</li>
+                                <ul>
+                                    <li><a href="#">New York</a></li>
+                                    <li><a href="#">Columbus</a></li>
+                                    <li><a href="#">Austin</a></li>
+                                    <li><a href="#">Philly</a></li>
+                                </ul>
+                                <li>World</li>
+                                <ul>
+                                    <li><a href="#">Ottawa</a></li>
+                                    <li><a href="#">Sydney</a></li>
+                                </ul>
+                            </ul>
+                        </nav>
+                    </div>
+        
+                    <h3>Upcoming Classes</h3>
+                    <table border="4">
+                        <tr>
+                            <th>Location</th>
+                            <th>Topic</th>
+                        </tr>
+                        <tr>
+                            <td>New York</td>
+                            <td>Javascript & jQuery</td>
+                        </tr>
+                        <tr>
+                            <td>New York</td>
+                            <td>HTML & CSS</td>
+                        </tr>
+                    </table>
+
+                   
+                    <h3>Sign Up!</h3>
+                    Name: <input style="background-color: var(--main-color); " type="text">
+                    <br>
+                    Email: <input style="background-color: var(--main-color);" type="text">
+                    <br>
+                    Location:
+                    <select>
+                        <option>India</option>
+                        <option>San Francisco</option>
+                        <option>England</option>
+                        </select>
+                        <fieldset>
+                            <legend>Gender:</legend>
+                            Female <input type="radio" name="gender">
+                            Male <input type="radio" name="gender">
+                        </fieldset>
+                        <br>
+                        Experience: <br> 
+                        <textarea  cols="20" rows="3"></textarea>
+                        
+                        <br>
+                        <button>Sign Up</button>
+                        <hr style="border: dashed; opacity: 0.1;">
+                        <footer style="text-align: center;">
+                            <a href="#">Twitter</a> |
+                            <a href="#">Facebook</a> |
+                            <a href="#">Flicker</a>
+                        </footer>
+
+            </div>
+        
+        <div style="height: 15px; background-color: var(--mcolor);"></div>
+        </div>
+        
+</body>
+</html>

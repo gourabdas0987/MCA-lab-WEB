@@ -1,2 +1,0 @@
-# MCA-lab-WEB
- MCA PU WEB TECHNOLOGY 
