@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    #image-container {
+      text-align: center;
+    }
+  </style>
+  <title>Image Viewer</title>
+</head>
+<body>
+
+<div id="image-container">
+  <img id="displayed-image" src="" alt="Displayed Image">
+</div>
+
+<div>
+  <button onclick="previousImage()">Previous</button>
+  <button onclick="nextImage()">Next</button>
+  <button onclick="shrinkImage()">Shrink</button>
+  <button onclick="enlargeImage()">Enlarge</button>
+</div>
+
+<script>
+  // Array of image URLs
+  const imageUrls = [
+    'image1.jpg',
+    'image2.jpg',
+    'image3.jpg',
+    // Add more image URLs as needed
+  ];
+
+  let currentImageIndex = 0;
+  const displayedImage = document.getElementById('displayed-image');
+
+  function updateImage() {
+    displayedImage.src = imageUrls[currentImageIndex];
+  }
+
+  function previousImage() {
+    currentImageIndex = (currentImageIndex - 1 + imageUrls.length) % imageUrls.length;
+    updateImage();
+  }
+
+  function nextImage() {
+    currentImageIndex = (currentImageIndex + 1) % imageUrls.length;
+    updateImage();
+  }
+
+  function shrinkImage() {
+    const currentWidth = displayedImage.width;
+    displayedImage.width = currentWidth * 0.8; // Shrink by 20%
+  }
+
+  function enlargeImage() {
+    const currentWidth = displayedImage.width;
+    displayedImage.width = currentWidth * 1.2; // Enlarge by 20%
+  }
+
+  // Initial image display
+  updateImage();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Reservation System</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        header {
+            text-align: center;
+            background-color: green;
+            padding: 10px;
+            color: white;
+        }
+
+        form {
+            margin: auto;
+            max-width: 900px;
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: green;
+            color: white;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 15px 0;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        h3 {
+            text-align: center;
+            color: green;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1><img src="ex3_images/logo.png" style="width: 36px; background-color: green;"> Make Room Reservations in
+            Minutes</h1>
+    </header>
+    <form>
+        <table>
+            <tr>
+                <td colspan="2">
+                    <label for="name">Please Enter Your Name</label>
+                    <br>
+                    <input type="text" id="name" name="name" placeholder="John Doe" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="email">Email Address</label>
+                    <br>
+                    <input type="email" id="email" name="email" placeholder="abc@gmail.com" required>
+                </td>
+                <td>
+                    <label for="phone">Telephone/Mobile</label>
+                    <br>
+                    <input type="tel" id="phone" name="phone" placeholder="Telephone/Mobile Number"
+                        pattern="[0-9]{2}-[0-9]{10}" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="adults">Number of Adults</label>
+                    <br>
+                    <select id="adults" name="adults" onchange="updateRoomTypes()">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </td>
+                <td>
+                    <label for="children">Number of Children</label>
+                    <br>
+                    <select id="children" name="children" onchange="updateRoomTypes()">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="checkInDate">Check-in Date</label>
+                    <input type="date" id="checkInDate" name="checkInDate" min="<?php echo date('Y-m-d'); ?>" required>
+                </td>
+                <td>
+                    <label for="checkOutDate">Check-out Date</label>
+                    <input type="date" id="checkOutDate" name="checkOutDate" min="<?php echo date('Y-m-d'); ?>"
+                        required>
+                </td>
+            </tr>
+        </table>
+        <div id="error-message" class="error-message"></div>
+        <h3>-------- PLEASE ANSWER THESE QUESTIONS FOR A PLEASANT STAY --------</h3>
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Attach the blur event listener to each input field
+            const inputFields = document.querySelectorAll('input, select, textarea');
+            inputFields.forEach(function (input) {
+                input.addEventListener('blur', function () {
+                    validateField(input);
+                });
+            });
+
+            // Reset error message on input change
+            document.addEventListener('input', function () {
+                document.getElementById('error-message').style.display = 'none';
+            });
+        });
+
+        function validateField(input) {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const checkInDate = document.getElementById('checkInDate').value;
+            const checkOutDate = document.getElementById('checkOutDate').value;
+
+            // Validate the specific input field
+            switch (input.id) {
+                case 'name':
+                    if (!name) {
+                        displayError("Please enter your name.");
+                    }
+                    break;
+                case 'email':
+                    if (!email) {
+                        displayError("Please enter your email address.");
+                    } else {
+                        // Validate email address format
+                        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+                        if (!email.match(emailRegex)) {
+                            displayError("Enter a valid email address.");
+                        }
+                    }
+                    break;
+                case 'phone':
+                    if (!phone) {
+                        displayError("Please enter your mobile number.");
+                    } else {
+                        // Validate mobile number format
+                        const phoneRegex = /^\d{2}-\d{10}$/;
+                        if (!phone.match(phoneRegex)) {
+                            displayError("Mobile number should be in the format 91-XXXXXXXXXX.");
+                        }
+                    }
+                    break;
+                case 'checkInDate':
+                    if (!checkInDate) {
+                        displayError("Please enter the check-in date.");
+                    }
+                    break;
+                case 'checkOutDate':
+                    if (!checkOutDate) {
+                        displayError("Please enter the check-out date.");
+                    } else {
+                        // Validate check-out date is after check-in date
+                        if (new Date(checkOutDate) <= new Date(checkInDate)) {
+                            displayError("Check-out date must be after check-in date.");
+                        }
+                    }
+                    break;
+            }
+        }
+
+        function displayError(message) {
+            const errorDiv = document.getElementById('error-message');
+            errorDiv.innerHTML = message;
+            errorDiv.style.display = 'block';
+        }
+    </script>
+
+
+</body>
+
+</html>

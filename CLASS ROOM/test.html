@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <form id="reservation-form">
+        <h2>Make Room Reservations in Minutes</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="adults">Number of Adults:</label>
+        <input type="number" id="adults" name="adults" min="1" required>
+        <br>
+        <label for="check-in">Check in Date:</label>
+        <input type="date" id="check-in" name="check-in" required>
+        <br>
+        <label for="telephone">Telephone/Mobile:</label>
+        <input type="tel" id="telephone" name="telephone" required>
+        <br>
+        <label for="children">Number of Children:</label>
+        <input type="number" id="children" name="children" min="0" required>
+        <br>
+        <label for="check-out">Check out Date:</label>
+        <input type="date" id="check-out" name="check-out" required>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    <script>
+        body {
+            font-family: Arial, sans-serif;
+           }
+           
+           #reservation-form {
+            width: 300px;
+            margin: 0 auto;
+           }
+           
+           #reservation-form label {
+            display: block;
+            margin-top: 10px;
+           }
+           
+           #reservation-form input {
+            width: 100%;
+            padding: 5px;
+           }
+           
+           #reservation-form input[type="submit"] {
+            margin-top: 20px;
+           }
+    </script>
+</body>
+</html>
